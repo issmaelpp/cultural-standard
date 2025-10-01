@@ -11,11 +11,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, HasUuids, Notifiable, TwoFactorAuthenticatable, SoftDeletes;
+    use HasFactory, HasUuids, HasRoles, Notifiable, TwoFactorAuthenticatable, SoftDeletes;
 
     protected $dateFormat = 'Y-m-d H:i:s.u';
 
