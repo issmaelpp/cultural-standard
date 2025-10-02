@@ -33,7 +33,8 @@
             <flux:dropdown class="hidden lg:block" position="bottom" align="start">
                 <flux:profile
                     :name="auth()->user()->name"
-                    :initials="auth()->user()->initials()"
+                    :avatar="auth()->user()->profile_photo_path ? asset(auth()->user()->profile_photo_path) : null"
+                    {{-- :initials="auth()->user()->initials()" --}}
                     icon:trailing="chevrons-up-down"
                     data-test="sidebar-menu-button"
                 />
@@ -84,7 +85,8 @@
 
             <flux:dropdown position="top" align="end">
                 <flux:profile
-                    :initials="auth()->user()->initials()"
+                    :avatar="auth()->user()->profile_photo_path ? asset(auth()->user()->profile_photo_path) : null"
+                    {{-- :initials="auth()->user()->initials()" --}}
                     icon-trailing="chevron-down"
                 />
 
